@@ -4,11 +4,12 @@ const { default: Counter } = require("../Counter/Counter");
 class CountGroup extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { size: 0, totalValue: 0 }
+        this.state = { size: 0, totalValue: 0 };
     }
     handelResize = (event) => {
         this.setState({
-            size: event.target.value ? parseInt(event.target.value) : 0
+            size: event.target.value ? parseInt(event.target.value) : 0,
+            totalValue:0
         })
     }
     handelIncrease = () => {
@@ -42,7 +43,7 @@ class CountGroup extends React.Component {
                     </label>
                 </div>
                 {
-                    initArray.map(key => <Counter onIncrease={this.handelIncrease} onReduce={this.handelReduce} key={key} />)
+                    initArray.map(key => <Counter groupsize={this.state.size} onIncrease={this.handelIncrease} onReduce={this.handelReduce} key={key} />)
                 }
             </div>
         )

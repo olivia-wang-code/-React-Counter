@@ -2,7 +2,7 @@ import React from 'react'
 class Counter extends React.Component{
     constructor(props){
         super(props);
-        this.state={value:0};
+        this.state={value:0,groupsize:0};
     }
     onIncrease=()=>{
         this.setState((preState)=>(
@@ -20,6 +20,14 @@ class Counter extends React.Component{
             }
         ))
         this.props.onReduce();
+    }
+    static getDerivedStateFromProps(props,state){
+        if(props.groupsize!=state.groupsize){
+            return {
+                value:0,
+                groupsize:props.groupsize
+            };
+        }
     }
     render(){
         return (<div>
