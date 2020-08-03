@@ -7,6 +7,9 @@ class CountGroup extends React.Component {
         this.state = { size: 0, totalValue: 0 };
     }
     handelResize = (event) => {
+        if(event.target.value<0){
+            return null;
+        }
         if(event.target.value==this.state.size){
             return null;
         }
