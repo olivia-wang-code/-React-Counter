@@ -11,7 +11,7 @@ class Counter extends React.Component{
             }
 
         ))
-        this.props.onIncrease();
+        this.props.onIncrease(1);
     }
     onReduce=()=>{
         this.setState((preState)=>(
@@ -19,8 +19,9 @@ class Counter extends React.Component{
                 value:preState.value-1
             }
         ))
-        this.props.onReduce();
+        this.props.onReduce(1);
     }
+    //
     static getDerivedStateFromProps(props,state){
         if(props.groupsize!=state.groupsize){
             return {

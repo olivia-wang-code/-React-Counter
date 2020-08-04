@@ -1,10 +1,13 @@
-export default (state = 0, action) => {
-    switch (action.type) {
-      case 'INCREMENT':
-        return state + 1
-      case 'DECREMENT':
-        return state - 1
-      default:
-        return state
-    }
+export default (state = {sum: 0 }, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { sum: state.sum + action.number }
+    case 'DECREMENT':
+      // return state.sum - action.number
+      return { sum: state.sum - action.number }
+    case 'RESET':
+      return { sum: 0 }
+    default:
+      return state
   }
+}
