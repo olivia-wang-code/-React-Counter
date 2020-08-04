@@ -20,20 +20,6 @@ class CountGroup extends React.Component {
         })
         this.props.resetTotalnumber();
     }
-    // handelIncrease = () => {
-    //     this.setState((preState) => (
-    //         {
-    //             totalValue: preState.totalValue + 1
-    //         }
-    //     ))
-    // }
-    // handelReduce = () => {
-    //     this.setState((preState) => (
-    //         {
-    //             totalValue: preState.totalValue - 1
-    //         }
-    //     ))
-    // }
     render() {
         const initArray = [...Array(this.state.size).keys()]
         return (
